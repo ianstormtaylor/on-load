@@ -1,7 +1,7 @@
 
 # load
 
-  Callback when the document is load.
+  Callback when the document has loaded.
 
 ## Installation
 

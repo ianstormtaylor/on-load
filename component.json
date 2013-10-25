@@ -1,7 +1,7 @@
 {
   "name": "on-load",
   "repo": "ianstormtaylor/on-load",
-  "description": "Callback when the page is loaded.",
+  "description": "Callback when the document has loaded.",
   "version": "0.0.1",
   "license": "MIT",
   "keywords": ["load", "callback"],
