@@ -1,27 +1,27 @@
 
-# ready
+# load
 
-  Callback when the document is ready.
+  Callback when the document is load.
 
 ## Installation
 
-    $ component install ianstormtaylor/on-ready
+    $ component install ianstormtaylor/on-load
 
 ## Example
   
 ```js
-var ready = require('on-ready');
+var onLoad = require('on-load');
 
-ready(function () {
-  console.log('ready');
+onLoad(function () {
+  console.log('load');
 });
 ```
 
 ## API
 
-### ready(handler)
+### onLoad(handler)
 
-  Call a `handler` when the document is ready.
+  Call a `handler` when the document is loaded, calling on next tick if the document is already loaded.
 
 ## License
 

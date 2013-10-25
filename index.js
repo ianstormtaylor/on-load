@@ -3,28 +3,10 @@ var callback = require('callback');
 
 
 /**
- * Expose `onReady`.
+ * Expose `onLoad`.
  */
 
-module.exports = onReady;
-
-
-/**
- * Callback when the document is ready.
- *
- * @param {Function} fn
- */
-
-function onReady (fn) {
-  ready ? callback.async(fn) : fns.push(fn);
-}
-
-
-/**
- * Cache ready state.
- */
-
-var ready = false;
+module.exports = onLoad;
 
 
 /**
@@ -35,11 +17,28 @@ var fns = [];
 
 
 /**
- * Bind to ready.
+ * Loaded tester.
+ */
+
+var loaded = /loaded|complete/;
+
+
+/**
+ * Callback when the document is load.
+ *
+ * @param {Function} fn
+ */
+
+function onLoad (fn) {
+  loaded.test(document.readyState) ? callback.async(fn) : fns.push(fn);
+}
+
+
+/**
+ * Bind to load.
  */
 
 document.addEventListener('DOMContentLoaded', function () {
   var fn;
-  ready = true;
   while (fn = fns.shift()) fn();
 });
